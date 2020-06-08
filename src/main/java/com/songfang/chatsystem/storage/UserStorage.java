@@ -1,11 +1,11 @@
-package com.songfang.chatsystem.model;
+package com.songfang.chatsystem.storage;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class UserStorage {
-private UserStorage instance;
-private Set<String> users;
+private static UserStorage instance;
+private  Set<String> users;
 
 private UserStorage(){
     users = new HashSet<>();
@@ -19,7 +19,11 @@ public void setUsers(String username){
     users.add(username);
 }
 
-public synchronized UserStorage getInstance(){
+    public  Set<String> getUsers() {
+        return users;
+    }
+
+    public static synchronized UserStorage getInstance(){
     if(instance==null){
         instance = new UserStorage();
     }
