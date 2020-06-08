@@ -2,17 +2,15 @@ package com.songfang.chatsystem.controller;
 
 import com.songfang.chatsystem.storage.UserStorage;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
+@CrossOrigin
 public class UserController {
 
-    @PostMapping("/register/{username}")
+    @GetMapping("/registration/{username}")
     public ResponseEntity<Void> register(@PathVariable String username){
         try {
             UserStorage.getInstance().setUsers(username);

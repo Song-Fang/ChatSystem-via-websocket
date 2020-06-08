@@ -3,7 +3,7 @@ package com.songfang.chatsystem.domain;
 public class Message {
 
     private String message;
-    private String fromOrigin;
+    private String fromLogin;
 
     public String getMessage() {
         return message;
@@ -13,19 +13,19 @@ public class Message {
         this.message = message;
     }
 
-    public String getFromOrigin() {
-        return fromOrigin;
+    public String getFromLogin() {
+        return fromLogin;
     }
 
-    public void setFromOrigin(String fromOrigin) {
-        this.fromOrigin = fromOrigin;
+    public void setFromLogin(String fromLogin) {
+        this.fromLogin = fromLogin;
     }
 
     @Override
     public String toString() {
         return "Message{" +
                 "message='" + message + '\'' +
-                ", fromOrigin='" + fromOrigin + '\'' +
+                ", fromLogin='" + fromLogin + '\'' +
                 '}';
     }
 }
